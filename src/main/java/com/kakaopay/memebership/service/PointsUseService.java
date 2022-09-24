@@ -1,4 +1,5 @@
 package com.kakaopay.memebership.service;
 
-public interface PointsUseService {
+public class PointsUseService {
+
 }
