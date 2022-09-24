@@ -1,0 +1,25 @@
+debug: false
+
+# ?? ??
+logging:
+  level:
+    com.kakaopay.membership: DEBUG
+  pattern:
+    console: '%d{yyyy-MM-dd HH:mm:ss} - %msg%n'
+    file: '%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%'
+
+# Spring ?? ??
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/springdata
+    username: postgres
+    password: password
+  jpa:
+    open-in-view: false
+    defer-datasource-initialization: true
+    hibernate.ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate:
+        ddl_auto: create
+        format_sql: true
