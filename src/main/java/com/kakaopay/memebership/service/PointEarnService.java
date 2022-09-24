@@ -1,6 +1,6 @@
 package com.kakaopay.memebership.service;
 
 
-public class PointsEarnService {
+public class PointEarnService {
 
 }

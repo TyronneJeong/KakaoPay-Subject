@@ -8,7 +8,6 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 public class MembershipApplication {
-
     private final static Logger log = LoggerFactory.getLogger(MembershipApplication.class);
 
     public static void main(String[] args) {
