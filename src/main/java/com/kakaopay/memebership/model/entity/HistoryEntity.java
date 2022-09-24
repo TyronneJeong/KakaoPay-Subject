@@ -15,7 +15,7 @@ import java.time.Instant;
 @Getter
 @ToString(callSuper = true)
 @Entity
-public class TranHistory extends AuditingFields {
+public class HistoryEntity extends AuditingFields {
     @Id
     @GeneratedValue
     @Column(nullable = false, updatable = false, length = 24)

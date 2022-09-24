@@ -21,24 +21,25 @@ public class MembershipController {
         // 고객 ID 에 바코드 번호 16자리 생성후 연결 정보를 만든다.
         // 정상 처리시 OK 리턴
         // 비정상 처리시 오류 메세지 리턴
+        membershipService.issueBarcode(userId);
         return null;
     }
 
-    @PostMapping("/{barcode}/payofpoint")
+    @PostMapping("/{barcode}/payOfPoint")
     public EntityResponse<?>  payOfPoint(String userId) {
         // 바코드를 이용한 지불 처리
         // 정상 및 비정상 처리 메세지 리턴
         return null;
     }
 
-    @PostMapping("/{barcode}/pointEarn")
+    @PostMapping("/{barcode}/stackPoint")
     public EntityResponse<?>  stackPoint(String userId) {
         // 바코드를 이용한 적립처리
         return null;
     }
 
-    @PostMapping("/{barcode}/tranHistory")
-    public EntityResponse<?>  tranHistory(String userId) {
+    @PostMapping("/{barcode}/showHistory")
+    public EntityResponse<?>  showHistory(String userId) {
         // 바코드를 이용한 적립처리
         return null;
     }

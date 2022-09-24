@@ -6,34 +6,32 @@ import lombok.ToString;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.util.Objects;
 
 @Getter
-@Setter
 @ToString(callSuper = true)
 @Entity
-public class User extends AuditingFields {
-
+public class PointEntity extends AuditingFields {
     @Id
-    @GeneratedValue
-    @Column(nullable = false, updatable = false, length = 16)
-    private String userId;
+    private String barcode;
+    @Id
+    private String workTypeCd;
 
-    @Column(nullable = false, updatable = false, length = 36)
-    private String userName;
+    @Setter
+    @Column(length = 18)
+    private Number point;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return userId.equals(user.userId);
+        PointEntity pointEntity = (PointEntity) o;
+        return barcode.equals(pointEntity.barcode) && workTypeCd.equals(pointEntity.workTypeCd);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userId);
+        return Objects.hash(barcode, workTypeCd);
     }
 }

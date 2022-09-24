@@ -14,7 +14,7 @@ import java.util.Objects;
         @Index(columnList = "barcode")
 })
 @Entity
-public class Barcode extends AuditingFields {
+public class BarcodeEntity extends AuditingFields {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,8 +28,8 @@ public class Barcode extends AuditingFields {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Barcode barcode1 = (Barcode) o;
-        return barcode.equals(barcode1.barcode);
+        BarcodeEntity barcodeEntity1 = (BarcodeEntity) o;
+        return barcode.equals(barcodeEntity1.barcode);
     }
 
     @Override

@@ -1,6 +1,5 @@
 package com.kakaopay.memebership.service;
 
-import com.kakaopay.memebership.dto.Barcode;
 import com.kakaopay.memebership.dto.Member;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -15,15 +14,15 @@ import javax.transaction.Transactional;
 @Service
 public class MembershipService {
 
-    public Barcode issueBarcode(Member member) throws Exception {
+    public String issueBarcode(String userId) {
         return null;
     }
 
-    public Boolean validateBarcode(Member member) throws Exception {
+    public Boolean validateBarcode(Member member) {
         return null;
     }
 
-    public Boolean shareBarcode(Member member) throws Exception {
+    public Boolean shareBarcode(Member member) {
         return null;
     }
 }

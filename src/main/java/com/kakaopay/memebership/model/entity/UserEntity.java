@@ -14,29 +14,26 @@ import java.util.Objects;
 @Setter
 @ToString(callSuper = true)
 @Entity
-public class Store extends AuditingFields {
+public class UserEntity extends AuditingFields {
 
     @Id
     @GeneratedValue
     @Column(nullable = false, updatable = false, length = 16)
-    private String storeId;
+    private String userId;
 
-    @Column(nullable = false, updatable = true, length = 72)
-    private String storeName;
-
-    @Column(length = 1)
-    private String workTypeCd;
+    @Column(nullable = false, updatable = false, length = 36)
+    private String userName;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Store store = (Store) o;
-        return storeId.equals(store.storeId);
+        UserEntity userEntity = (UserEntity) o;
+        return userId.equals(userEntity.userId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(storeId);
+        return Objects.hash(userId);
     }
 }
