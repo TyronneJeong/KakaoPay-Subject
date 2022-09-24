@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.function.EntityResponse;
 
 @RequiredArgsConstructor
-@RequestMapping("/api-dev/v1/point")
+@RequestMapping("/api/point")
 @RestController
 public class PointController {
 
 
-    @PostMapping("/{barcode}/payOfPoint")
-    public EntityResponse<?> payOfPoint(String userId) {
+    @PostMapping("/{barcode}/usePoint")
+    public EntityResponse<?> usePoint(String userId) {
         // 바코드를 이용한 지불 처리
         // 정상 및 비정상 처리 메세지 리턴
 
