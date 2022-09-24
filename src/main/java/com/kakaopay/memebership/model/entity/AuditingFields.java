@@ -1,4 +1,4 @@
-package com.kakaopay.memebership.domain.audit;
+package com.kakaopay.memebership.model.entity;
 
 import lombok.Getter;
 import lombok.ToString;
