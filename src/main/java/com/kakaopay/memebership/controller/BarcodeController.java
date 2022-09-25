@@ -1,5 +1,8 @@
 package com.kakaopay.memebership.controller;
 
+import com.kakaopay.memebership.controller.request.BarcodeIssueRequest;
+import com.kakaopay.memebership.controller.response.BarcodeIssueResponse;
+import com.kakaopay.memebership.controller.response.Response;
 import com.kakaopay.memebership.dto.BarcodeIssueDto;
 import com.kakaopay.memebership.service.BarcodeService;
 import lombok.RequiredArgsConstructor;
@@ -8,20 +11,17 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
+@Slf4j
 @RequiredArgsConstructor
-@RequestMapping("/api/barcode")
+@RequestMapping("/api/v1/barcode")
 @RestController
 public class BarcodeController {
 
-    private final static Logger logger = LoggerFactory.getLogger(BarcodeController.class);
     private final BarcodeService barcodeService;
 
-    @GetMapping("/issue")
-    public BarcodeIssueDto issue(@RequestParam String userId) {
-        // 고객 ID 에 바코드 번호 16자리 생성후 연결 정보를 만든다.
-        // 기 발급 정보가 존재하는 경우 바코드를 리턴 한다.
-        // 정상 처리시 OK 리턴
-        // 비정상 처리시 오류 메세지 리턴
-        return barcodeService.issueBarcode(userId);
+    @PostMapping("/issue")
+    public Response<BarcodeIssueResponse> issue(@RequestBody BarcodeIssueRequest barcodeIssueRequest) {
+        log.debug("issue 진입 : " + barcodeIssueRequest.toString());
+        return Response.success(BarcodeIssueResponse.fromBarcodeIssue(barcodeService.issueBarcode(barcodeIssueRequest.getUserId())));
     }
 }

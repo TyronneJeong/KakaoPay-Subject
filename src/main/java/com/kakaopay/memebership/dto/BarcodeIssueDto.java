@@ -11,4 +11,8 @@ import lombok.*;
 public class BarcodeIssueDto {
     private String barcode;
     private String userId;
+
+    public BarcodeIssueDto(String userId) {
+        this.userId = userId;
+    }
 }

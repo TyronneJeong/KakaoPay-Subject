@@ -15,7 +15,6 @@ import java.util.Objects;
 public class PointEntity extends AuditingFields {
     @Id
     private String barcode;
-    @Id
     private String workTypeCd;
 
     @Setter

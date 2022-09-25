@@ -5,10 +5,7 @@ import lombok.Setter;
 import lombok.ToString;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.Instant;
 
@@ -45,4 +42,5 @@ public class HistoryEntity extends AuditingFields {
 
     @Setter @Column(nullable = false, updatable = false,  length = 16)
     private String tranUserId;
+
 }
