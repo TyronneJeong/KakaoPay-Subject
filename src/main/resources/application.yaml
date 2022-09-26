@@ -7,12 +7,12 @@ logging:
     org.springframework.web.servlet: debug
     org.hibernate.type.descriptor.sql.BasicBinder: trace
   pattern:
-    console: '%d{yyyy-MM-dd HH:mm:ss} - %msg%n'
+    # console: '%d{yyyy-MM-dd HH:mm:ss} - %msg%n'
     file: '%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%'
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/springdata
+    url: jdbc:postgresql://localhost:5432/kakaopay
     username: postgres
     password: password
     driver-class-name: org.postgresql.Driver
