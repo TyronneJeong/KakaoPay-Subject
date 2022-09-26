@@ -10,7 +10,7 @@ import lombok.*;
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
 @Builder
 public class BarcodeIssueInDto {
-    private long userId;
+    private Integer userId;
     public static BarcodeIssueInDto fromReqDto(BarcodeIssueReqDto reqDto) {
         return new BarcodeIssueInDto(reqDto.getUserId());
     }

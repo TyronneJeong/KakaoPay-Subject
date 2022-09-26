@@ -9,5 +9,5 @@ import java.util.Optional;
 @Repository
 public interface BarcodeRepository extends JpaRepository<Barcode, String> {
 
-    Optional<Barcode> findByOwnerId(long userId);
+    Optional<Barcode> findByOwnerId(Integer userId);
 }

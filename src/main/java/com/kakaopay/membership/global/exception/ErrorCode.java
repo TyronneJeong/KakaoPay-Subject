@@ -12,6 +12,7 @@ public enum ErrorCode {
     NO_REMAINED_POINT(HttpStatus.BAD_REQUEST, "doesn't remained the point."),
     NOT_FOUND_STORE_NAME(HttpStatus.NOT_FOUND, "doesn't remained the point."),
     NOT_REGISTERED_BAR_CODE_NUMBER(HttpStatus.BAD_REQUEST, "Not registered barcode number."),
+    USER_INFO_DOES_NOT_EXISTS(HttpStatus.BAD_REQUEST, "User info does not exists."),
 
     ;
     private HttpStatus status;

@@ -5,23 +5,18 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Getter
 @Setter
 @ToString(callSuper = true)
 @Entity(name ="\"User\"")
 public class User extends AuditingFields {
-
     @Id
-    @GeneratedValue
-    @Column(length = 9)
-    private long userId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
+    private Integer userId;
 
-    @Column(nullable = false, updatable = false, length = 24)
+    @Column(length = 24, nullable = false)
     private String userName;
-
 }

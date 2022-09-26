@@ -27,7 +27,7 @@ public class BarcodeControllerTest {
     @DisplayName("바코드 발급 테스트")
     @Test
     void issueTest() throws Exception {
-        long userId = 3399999L;
+        Integer userId = 1;
         mockMvc.perform(post("/api/v1/membership/barcode")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsBytes(new BarcodeIssueReqDto(userId)))

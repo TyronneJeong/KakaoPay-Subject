@@ -6,6 +6,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.sql.Timestamp;
 import java.time.Instant;
 
 @Getter
@@ -17,32 +18,38 @@ import java.time.Instant;
 public class History extends AuditingFields {
     @Id
     @GeneratedValue
-    @Column(nullable = false, updatable = false, length = 24)
+    @Column
     private Integer tranHistId;
 
-    @Setter @Column(nullable = false, updatable = false, length = 16)
+    @Setter @Column
     private Integer storeId;
 
-    @Setter @Column(nullable = false, updatable = false, length = 13)
+    @Setter @Column(nullable = false, updatable = false,  length = 24)
+    private String storeName;
+
+    @Setter @Column(nullable = false, updatable = false, length = 10)
     private String barcode;
 
     @Setter @Column(nullable = false, updatable = false, length = 1)
     private String workTypeCd;
 
-    @Setter @Column(nullable = false, updatable = false, length = 18)
-    private BigDecimal beforePoint;
+    @Setter @Column(nullable = false, updatable = false, length = 4)
+    private String inOutDvCd;
 
-    @Setter @Column(nullable = false, updatable = false, length = 18)
-    private BigDecimal tranPoint;
+    @Setter @Column(nullable = false, updatable = false)
+    private Integer tranPoint;
 
-    @Setter @Column(nullable = false, updatable = false, length = 18)
-    private BigDecimal afterPoint;
+    @Setter @Column(nullable = false, updatable = false)
+    private Integer totalPoint;
 
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     @Setter @Column(nullable = false, updatable = false)
-    private Instant tranDate;
+    private Timestamp tranDate;
 
     @Setter @Column(nullable = false, updatable = false,  length = 16)
     private Integer tranUserId;
+
+    @Setter @Column(nullable = false, updatable = false,  length = 24)
+    private String tranUserName;
 
 }

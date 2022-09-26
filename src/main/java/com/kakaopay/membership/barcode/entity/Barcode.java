@@ -5,8 +5,8 @@ import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.math.BigInteger;
-import java.util.Objects;
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -20,26 +20,19 @@ public class Barcode extends AuditingFields {
     @Id
     @GeneratedValue(generator = "barcode")
     @GenericGenerator(name = "barcode", strategy = "com.kakaopay.membership.barcode.entity.BarcodeGenerator")
-    @Column(length = 10)
-    private String barcode;
+    private @Column(length = 10) String barcode;
+    private @Column Integer ownerId;
 
-    @Column(length = 9)
-    private BigInteger ownerId;
+    @OneToMany(mappedBy = "userId")
+    Set<BarcodeUser> barcodeUsers = new HashSet<>();
 
-    // 유저와 1:N 관계
-//    @OneToMany(mappedBy = "userId")
-//    Set<User> users = new HashSet<>();
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Barcode barcode1 = (Barcode) o;
-        return barcode.equals(barcode1.barcode);
+    public void addUser(BarcodeUser barcodeUser) {
+        this.getBarcodeUsers().add(barcodeUser);
+        barcodeUser.setRefBarcode(this);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(barcode);
+    public void removeUser(BarcodeUser barcodeUser) {
+        this.getBarcodeUsers().remove(barcodeUser);
+        barcodeUser.setRefBarcode(null);
     }
 }

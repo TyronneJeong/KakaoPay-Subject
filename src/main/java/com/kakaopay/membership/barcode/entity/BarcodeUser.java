@@ -1,9 +1,6 @@
 package com.kakaopay.membership.barcode.entity;
 
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -12,13 +9,12 @@ import java.io.Serializable;
 @Data
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
+@Builder
 @Table(name = "BarcodeUser")
 @IdClass(BarcodeUserPK.class)
 public class BarcodeUser implements Serializable {
-    @Id
-    private String barcode;
-    @Id
-    private Integer userId;
-    private String relationTypeCd;
-
+    private @Id String barcode;
+    private @Id Integer userId;
+    private @Column String relationTypeCd;
+    private @Transient @ManyToOne Barcode refBarcode;
 }

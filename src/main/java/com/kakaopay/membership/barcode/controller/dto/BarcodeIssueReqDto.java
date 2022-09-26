@@ -7,5 +7,5 @@ import lombok.*;
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 public class BarcodeIssueReqDto {
-    private long userId;
+    private Integer userId;
 }

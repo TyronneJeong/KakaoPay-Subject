@@ -7,6 +7,7 @@ import com.kakaopay.membership.history.repository.HistoryRepository;
 import com.kakaopay.membership.history.repository.entity.History;
 import com.kakaopay.membership.point.repository.PointRepository;
 import com.kakaopay.membership.point.repository.entity.Point;
+import com.kakaopay.membership.point.repository.entity.PointPK;
 import com.kakaopay.membership.point.service.dto.EarnPointInDto;
 import com.kakaopay.membership.point.service.dto.EarnPointOutDto;
 import com.kakaopay.membership.point.service.dto.UsePointInDto;
@@ -36,7 +37,7 @@ public class PointService {
             throw new ApplicationException(ErrorCode.NOT_REGISTERED_BAR_CODE_NUMBER, "존재하지 않는 바코드 번호 입니다.");
         });
 
-        Optional<Point> point = pointRepository.findById(inDto.getBarcode()) // 출력항목에 관계테이블 조인과 잔액정보 추가필요
+        Optional<Point> point = pointRepository.findById(new PointPK(inDto.getBarcode(), "A")) // 출력항목에 관계테이블 조인과 잔액정보 추가필요
                 .filter(e -> {
                     return e.getStoreId().equals(inDto.getStoreId());
                 });// 지점
