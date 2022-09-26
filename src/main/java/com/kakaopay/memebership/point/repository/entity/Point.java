@@ -1,4 +1,4 @@
-package com.kakaopay.memebership.point.model;
+package com.kakaopay.memebership.point.repository.entity;
 
 import com.kakaopay.memebership.global.model.AuditingFields;
 import lombok.Getter;
@@ -13,10 +13,12 @@ import java.util.Objects;
 @Getter
 @ToString(callSuper = true)
 @Entity
-public class PointEntity extends AuditingFields {
+public class Point extends AuditingFields {
     @Id
-    private String barcode;
+    private Integer barcode;
     private String workTypeCd;
+
+    private Integer storeId;
 
     @Setter
     @Column(length = 18)
@@ -26,8 +28,8 @@ public class PointEntity extends AuditingFields {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        PointEntity pointEntity = (PointEntity) o;
-        return barcode.equals(pointEntity.barcode) && workTypeCd.equals(pointEntity.workTypeCd);
+        Point point = (Point) o;
+        return barcode.equals(point.barcode) && workTypeCd.equals(point.workTypeCd);
     }
 
     @Override

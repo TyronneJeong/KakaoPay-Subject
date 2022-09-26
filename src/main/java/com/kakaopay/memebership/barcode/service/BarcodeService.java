@@ -1,7 +1,7 @@
 package com.kakaopay.memebership.barcode.service;
 
 import com.kakaopay.memebership.barcode.repository.BarcodeRepository;
-import com.kakaopay.memebership.barcode.repository.entity.BarcodeEntity;
+import com.kakaopay.memebership.barcode.repository.entity.Barcode;
 import com.kakaopay.memebership.barcode.service.dto.BarcodeIssueInDto;
 import com.kakaopay.memebership.barcode.service.dto.BarcodeIssueOutDto;
 import com.kakaopay.memebership.global.constants.MsgConst;
@@ -28,9 +28,9 @@ public class BarcodeService {
         userRepository.findById(inDto.getUserId()).ifPresent(e -> {
             throw new ApplicationException(ErrorCode.DUPLICATED_USER_NAME, MsgConst.USER_INFO_DOES_NOT_EXISTS);
         });
-        Optional<BarcodeEntity> barcodeEntity = barcodeRepository.findByOwnerId(inDto.getUserId());
+        Optional<Barcode> barcodeEntity = barcodeRepository.findByOwnerId(inDto.getUserId());
         if (!barcodeEntity.isPresent()) {
-            return BarcodeIssueOutDto.fromEntity(barcodeRepository.save(BarcodeEntity.builder()
+            return BarcodeIssueOutDto.fromEntity(barcodeRepository.save(Barcode.builder()
                     .barcode(BarcodeUtils.makeBarcode(inDto.getUserId()))
                     .ownerId(inDto.getUserId())
                     .build()));

@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @RequiredArgsConstructor
-@RequestMapping("/api/v1/barcode")
+@RequestMapping("/api/v1/membership")
 @RestController
 public class BarcodeController {
 
     private final BarcodeService barcodeService;
 
-    @PostMapping("/issue")
+    @PostMapping("/barcode")
     public Response<BarcodeIssueResDto> issue(@RequestBody BarcodeIssueReqDto barcodeIssueReqDto) {
         return Response.success(BarcodeIssueResDto.fromOutDto(barcodeService.issueBarcode(BarcodeIssueInDto.fromReqDto(barcodeIssueReqDto))));
     }

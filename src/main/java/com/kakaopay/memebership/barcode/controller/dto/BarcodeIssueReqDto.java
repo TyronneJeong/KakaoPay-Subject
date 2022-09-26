@@ -6,7 +6,6 @@ import lombok.*;
 @Setter
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
-@Builder
 public class BarcodeIssueReqDto {
     private String userId;
 }

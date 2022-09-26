@@ -1,4 +1,4 @@
-package com.kakaopay.memebership.store.model;
+package com.kakaopay.memebership.user.repository.entity;
 
 import com.kakaopay.memebership.global.model.AuditingFields;
 import lombok.Getter;
@@ -15,29 +15,26 @@ import java.util.Objects;
 @Setter
 @ToString(callSuper = true)
 @Entity
-public class StoreEntity extends AuditingFields {
+public class User extends AuditingFields {
 
     @Id
     @GeneratedValue
     @Column(nullable = false, updatable = false, length = 16)
-    private String storeId;
+    private String userId;
 
-    @Column(nullable = false, updatable = true, length = 72)
-    private String storeName;
-
-    @Column(length = 1)
-    private String workTypeCd;
+    @Column(nullable = false, updatable = false, length = 36)
+    private String userName;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        StoreEntity storeEntity = (StoreEntity) o;
-        return storeId.equals(storeEntity.storeId);
+        User user = (User) o;
+        return userId.equals(user.userId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(storeId);
+        return Objects.hash(userId);
     }
 }

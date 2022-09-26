@@ -8,7 +8,7 @@ import lombok.*;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Builder
-public class EarnPointDto {
+public class EarnPointOutDto {
     private String barcode;
     private Integer gainPoint;
     private String userId;

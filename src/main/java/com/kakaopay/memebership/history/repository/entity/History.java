@@ -1,9 +1,7 @@
-package com.kakaopay.memebership.history.domain;
+package com.kakaopay.memebership.history.repository.entity;
 
 import com.kakaopay.memebership.global.model.AuditingFields;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -13,17 +11,20 @@ import java.time.Instant;
 @Getter
 @ToString(callSuper = true)
 @Entity
-public class HistoryEntity extends AuditingFields {
+@NoArgsConstructor(access = AccessLevel.PUBLIC)
+@AllArgsConstructor(access = AccessLevel.PUBLIC)
+@Builder
+public class History extends AuditingFields {
     @Id
     @GeneratedValue
     @Column(nullable = false, updatable = false, length = 24)
-    private String tranHistId;
+    private Integer tranHistId;
 
     @Setter @Column(nullable = false, updatable = false, length = 16)
-    private String storeId;
+    private Integer storeId;
 
     @Setter @Column(nullable = false, updatable = false, length = 13)
-    private String barcode;
+    private Integer barcode;
 
     @Setter @Column(nullable = false, updatable = false, length = 1)
     private String workTypeCd;
@@ -42,6 +43,6 @@ public class HistoryEntity extends AuditingFields {
     private Instant tranDate;
 
     @Setter @Column(nullable = false, updatable = false,  length = 16)
-    private String tranUserId;
+    private Integer tranUserId;
 
 }

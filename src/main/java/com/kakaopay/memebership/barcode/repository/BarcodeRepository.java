@@ -1,14 +1,13 @@
 package com.kakaopay.memebership.barcode.repository;
 
-import com.kakaopay.memebership.barcode.repository.entity.BarcodeEntity;
+import com.kakaopay.memebership.barcode.repository.entity.Barcode;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.math.BigInteger;
 import java.util.Optional;
 
 @Repository
-public interface BarcodeRepository extends JpaRepository<BarcodeEntity, Integer> {
+public interface BarcodeRepository extends JpaRepository<Barcode, Integer> {
 
-    Optional<BarcodeEntity> findByOwnerId(String userId);
+    Optional<Barcode> findByOwnerId(String userId);
 }

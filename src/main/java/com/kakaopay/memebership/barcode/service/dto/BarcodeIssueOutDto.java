@@ -1,9 +1,7 @@
 package com.kakaopay.memebership.barcode.service.dto;
 
-import com.kakaopay.memebership.barcode.repository.entity.BarcodeEntity;
+import com.kakaopay.memebership.barcode.repository.entity.Barcode;
 import lombok.*;
-
-import java.math.BigInteger;
 
 @Getter
 @Setter
@@ -15,7 +13,7 @@ public class BarcodeIssueOutDto {
     private Integer barcode;
     private String ownerId;
 
-    public static BarcodeIssueOutDto fromEntity(BarcodeEntity entity) {
+    public static BarcodeIssueOutDto fromEntity(Barcode entity) {
         return new BarcodeIssueOutDto(entity.getBarcode(), entity.getOwnerId());
     }
 }

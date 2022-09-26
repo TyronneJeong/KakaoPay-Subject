@@ -28,7 +28,6 @@ public class BarcodeControllerTest {
     @Test
     void issueTest() throws Exception {
         String userId = "test_user";
-
         mockMvc.perform(post("/api/v1/barcode/issue")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsBytes(new BarcodeIssueReqDto(userId)))

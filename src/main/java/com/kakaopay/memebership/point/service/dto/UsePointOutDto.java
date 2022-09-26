@@ -8,8 +8,8 @@ import lombok.*;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Builder
-public class PayPointDto {
-    private String barcode;
+public class UsePointOutDto {
+    private Integer barcode;
     private String userId;
     private String requestPoint;
 

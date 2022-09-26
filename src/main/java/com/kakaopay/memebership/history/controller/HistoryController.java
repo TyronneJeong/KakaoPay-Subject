@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RequiredArgsConstructor
-@RequestMapping("/api/history")
+@RequestMapping("/api/v1/membership")
 @RestController
 public class HistoryController {
 
     private final HistoryService historyService;
 
-    @GetMapping("/{barcode}/gethistory")
+    @GetMapping("/history")
     public Response<List<HistoryReqDto>>  getHistory(HistoryReqDto historyReqDto) {
         return null;
     }

@@ -4,7 +4,6 @@ import com.kakaopay.memebership.global.model.AuditingFields;
 import lombok.*;
 
 import javax.persistence.*;
-import java.math.BigInteger;
 import java.util.Objects;
 
 @Getter
@@ -15,7 +14,7 @@ import java.util.Objects;
 @Builder
 @Table
 @Entity
-public class BarcodeEntity extends AuditingFields {
+public class Barcode extends AuditingFields {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,8 +28,8 @@ public class BarcodeEntity extends AuditingFields {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        BarcodeEntity barcodeEntity1 = (BarcodeEntity) o;
-        return barcode.equals(barcodeEntity1.barcode);
+        Barcode barcode1 = (Barcode) o;
+        return barcode.equals(barcode1.barcode);
     }
 
     @Override

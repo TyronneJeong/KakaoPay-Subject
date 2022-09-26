@@ -5,27 +5,29 @@ import com.kakaopay.memebership.point.controller.dto.EarnPointReqDto;
 import com.kakaopay.memebership.point.controller.dto.EarnPointResDto;
 import com.kakaopay.memebership.point.controller.dto.UsePointReqDto;
 import com.kakaopay.memebership.point.controller.dto.UsePointResDto;
+import com.kakaopay.memebership.point.service.PointService;
+import com.kakaopay.memebership.point.service.dto.EarnPointInDto;
+import com.kakaopay.memebership.point.service.dto.UsePointInDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RequiredArgsConstructor
-@RequestMapping("/api/point")
+@RequestMapping("/api/v1/membership/point")
 @RestController
 public class PointController {
 
+    private final PointService pointService;
 
-    @PostMapping("/usePoint")
+    @PostMapping("/use")
     public Response<UsePointResDto> usePoint(UsePointReqDto usePointReqDto) {
-        // 바코드를 이용한 지불 처리
-        // 정상 및 비정상 처리 메세지 리턴
-        return null;
+        return Response.success(UsePointResDto.fromOutDto(pointService.usePoint(UsePointInDto.fromReqDto(usePointReqDto))));
     }
 
-    @PostMapping("/earnPoint")
+    @PostMapping("/earn")
     public Response<EarnPointResDto> earnPoint(EarnPointReqDto earnPointReqDto) {
-        // 바코드를 이용한 적립처리
-        return null;
+        return Response.success(EarnPointResDto.fromOutDto(pointService.earnPoint(EarnPointInDto.fromReqDto(earnPointReqDto))));
     }
 }
