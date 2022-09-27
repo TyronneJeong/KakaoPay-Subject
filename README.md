@@ -42,6 +42,6 @@
 -e POSTGRES_DB = kakaopay --name postgres-kakaopay -d postgres</ol>
 
 <h2>Reference</h2>
-![ERD](https://github.com/TyronneJeong/KakaoPay-Subject/blob/main/document/kakaopay-membership.png)
+![ERD](./document/kakaopay-membership.png)
 <li>ERD : /document/kakaopay-membership.png </li>
 <li>Sample Data : /resources/data.sql </li>
