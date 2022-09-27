@@ -8,7 +8,7 @@ import lombok.*;
 @Builder
 public class UsePointReqDto {
     private String barcode;
-    private Number usePoint;
     private Integer storeId;
-    private String userId;
+    private Integer userId;
+    private Integer usePoint;
 }

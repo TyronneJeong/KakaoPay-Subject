@@ -1,4 +1,4 @@
-package com.kakaopay.membership.history.repository.entity;
+package com.kakaopay.membership.history.entity;
 
 import com.kakaopay.membership.global.model.AuditingFields;
 import lombok.*;

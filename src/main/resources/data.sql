@@ -100,7 +100,201 @@ insert into "user" (user_id, user_name, created_at, modified_at) values (98, '�
 insert into "user" (user_id, user_name, created_at, modified_at) values (99, '길대화', current_timestamp, current_timestamp);
 
 /* 친구 가족 관계 생성 */
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values ( 1,  1, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values ( 2,  2, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values ( 3,  3, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values ( 4,  4, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values ( 5,  5, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values ( 6,  6, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values ( 7,  7, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values ( 8,  8, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values ( 9,  9, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (10, 10, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (11, 11, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (12, 12, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (13, 13, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (14, 14, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (15, 15, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (16, 16, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (17, 17, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (18, 18, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (19, 19, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (20, 20, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (21, 21, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (22, 22, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (23, 23, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (24, 24, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (25, 25, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (26, 26, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (27, 27, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (28, 28, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (29, 29, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (30, 30, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (31, 31, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (32, 32, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (33, 33, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (34, 34, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (35, 35, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (36, 36, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (37, 37, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (38, 38, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (39, 39, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (40, 40, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (41, 41, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (42, 42, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (43, 43, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (44, 44, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (45, 45, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (46, 46, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (47, 47, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (48, 48, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (49, 49, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (50, 50, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (51, 51, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (52, 52, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (53, 53, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (54, 54, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (55, 55, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (56, 56, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (57, 57, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (58, 58, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (59, 59, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (60, 60, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (61, 61, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (62, 62, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (63, 63, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (64, 64, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (65, 65, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (66, 66, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (67, 67, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (68, 68, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (69, 69, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (70, 70, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (71, 71, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (72, 72, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (73, 73, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (74, 74, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (75, 75, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (76, 76, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (77, 77, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (78, 78, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (79, 79, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (80, 80, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (81, 81, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (82, 82, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (83, 83, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (84, 84, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (85, 85, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (86, 86, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (87, 87, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (88, 88, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (89, 89, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (90, 90, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (91, 91, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (92, 92, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (93, 93, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (94, 94, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (95, 95, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (96, 96, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (97, 97, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (98, 98, 'A', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (99, 99, 'A', current_timestamp, current_timestamp);
 
+/* 1~10 친구 등록 */
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values ( 1, 11, 'B', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values ( 2, 12, 'B', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values ( 3, 13, 'B', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values ( 4, 14, 'B', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values ( 5, 15, 'B', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values ( 6, 16, 'B', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values ( 7, 17, 'B', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values ( 8, 18, 'B', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values ( 9, 19, 'B', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (10, 20, 'B', current_timestamp, current_timestamp);
+
+/* 1~10 가족 등록 */
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values ( 1, 21, 'C', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values ( 2, 22, 'C', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values ( 3, 23, 'C', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values ( 4, 24, 'C', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values ( 5, 25, 'C', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values ( 6, 26, 'C', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values ( 7, 27, 'C', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values ( 8, 28, 'C', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values ( 9, 29, 'C', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (10, 30, 'C', current_timestamp, current_timestamp);
+
+/* 11~20 친구등록 */
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (11,  1, 'B', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (12,  2, 'B', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (13,  3, 'B', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (14,  4, 'B', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (15,  5, 'B', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (16,  6, 'B', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (17,  7, 'B', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (18,  8, 'B', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (19,  9, 'B', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (20, 10, 'B', current_timestamp, current_timestamp);
+
+/* 21~30 가족간 연결 */
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (21, 26, 'C', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (22, 27, 'C', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (23, 28, 'C', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (24, 29, 'C', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (25, 30, 'C', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (26, 21, 'C', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (27, 22, 'C', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (28, 23, 'C', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (29, 24, 'C', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (30, 25, 'C', current_timestamp, current_timestamp);
+
+/* 51~60 친구등록 */
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (51, 61, 'B', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (52, 62, 'B', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (53, 63, 'B', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (54, 64, 'B', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (55, 65, 'B', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (56, 66, 'B', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (57, 67, 'B', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (58, 68, 'B', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (59, 69, 'B', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (60, 70, 'B', current_timestamp, current_timestamp);
+
+/* 51~60 가족등록 */
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (51, 71, 'C', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (52, 72, 'C', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (53, 73, 'C', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (54, 74, 'C', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (55, 75, 'C', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (56, 76, 'C', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (57, 77, 'C', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (58, 78, 'C', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (59, 79, 'C', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (60, 80, 'C', current_timestamp, current_timestamp);
+
+/* 61~70 친구등록*/
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (61, 51, 'B', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (62, 52, 'B', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (63, 53, 'B', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (64, 54, 'B', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (65, 55, 'B', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (66, 56, 'B', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (67, 57, 'B', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (68, 58, 'B', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (69, 59, 'B', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (70, 60, 'B', current_timestamp, current_timestamp);
+
+/* 71~80 가족간 연결 */
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (71, 76, 'C', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (72, 77, 'C', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (73, 78, 'C', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (74, 79, 'C', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (75, 80, 'C', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (76, 71, 'C', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (77, 72, 'C', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (78, 73, 'C', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (79, 74, 'C', current_timestamp, current_timestamp);
+insert into relation (user_id, friend_id, relation_type_cd, created_at, modified_at) values (80, 75, 'C', current_timestamp, current_timestamp);
 
 /* 스토어 정보 생성 */
 insert into store (store_id, store_name, work_type_cd, created_at, modified_at) values ( 1, '맛나 분식' , 'A', current_timestamp, current_timestamp);

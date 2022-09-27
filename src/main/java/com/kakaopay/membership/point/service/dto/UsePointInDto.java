@@ -11,9 +11,9 @@ import lombok.*;
 @Builder
 public class UsePointInDto {
     private String barcode;
-    private Number usePoint;
     private Integer storeId;
-    private String userId;
+    private Integer userId;
+    private Integer usePoint;
 
     public static UsePointInDto fromReqDto(UsePointReqDto reqDto) {
         return UsePointInDto.builder()

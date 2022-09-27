@@ -4,11 +4,13 @@ import lombok.*;
 
 @Getter
 @Setter
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@ToString
+@NoArgsConstructor(access = AccessLevel.PUBLIC)
+@AllArgsConstructor(access = AccessLevel.PUBLIC)
 @Builder
 public class EarnPointReqDto {
     private String barcode;
-    private Integer gainPoint;
-    private String storeId;
-    private String userId;
+    private Integer earnPoint;
+    private Integer storeId;
+    private Integer userId;
 }

@@ -13,4 +13,9 @@ public final class Constants {
         public static final String COSMETICS  = "B";
         public static final String RESTAURANT = "C";
     }
+
+    public final class IN_OUT_DVCD {
+        public static final String IN  = "EARN";
+        public static final String OUT = "USE";
+    }
 }

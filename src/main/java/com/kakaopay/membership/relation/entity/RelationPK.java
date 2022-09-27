@@ -1,4 +1,4 @@
-package com.kakaopay.membership.barcode.entity;
+package com.kakaopay.membership.relation.entity;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -10,7 +10,7 @@ import java.io.Serializable;
 @Data
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
-public class BarcodeUserPK implements Serializable {
-    private String barcode;
+public class RelationPK implements Serializable {
     private Integer userId;
+    private Integer friendId;
 }

@@ -1,15 +1,10 @@
 package com.kakaopay.membership.history.service;
 
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Service;
+import com.kakaopay.membership.history.service.dto.HistoryInDto;
+import com.kakaopay.membership.history.service.dto.HistoryOutDto;
 
-import javax.transaction.Transactional;
+import java.util.List;
 
-@Slf4j
-@RequiredArgsConstructor
-@Transactional
-@Service
-public class HistoryService {
-
+public interface HistoryService {
+    public List<HistoryOutDto> getHistory(HistoryInDto inDto);
 }

@@ -11,14 +11,14 @@ import lombok.*;
 @Builder
 public class EarnPointInDto {
     private String barcode;
-    private Integer gainPoint;
-    private String storeId;
-    private String userId;
+    private Integer storeId;
+    private Integer userId;
+    private Integer earnPoint;
 
     public static EarnPointInDto fromReqDto(EarnPointReqDto reqDto) {
         return EarnPointInDto.builder()
                 .barcode(reqDto.getBarcode())
-                .gainPoint(reqDto.getGainPoint())
+                .earnPoint(reqDto.getEarnPoint())
                 .storeId(reqDto.getStoreId())
                 .userId(reqDto.getUserId())
                 .build();

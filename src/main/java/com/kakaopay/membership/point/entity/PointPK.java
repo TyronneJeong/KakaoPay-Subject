@@ -1,4 +1,4 @@
-package com.kakaopay.membership.point.repository.entity;
+package com.kakaopay.membership.point.entity;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;

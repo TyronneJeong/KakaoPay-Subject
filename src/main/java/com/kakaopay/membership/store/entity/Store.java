@@ -1,4 +1,4 @@
-package com.kakaopay.membership.user.repository.entity;
+package com.kakaopay.membership.store.entity;
 
 import com.kakaopay.membership.global.model.AuditingFields;
 import lombok.Getter;
@@ -10,13 +10,11 @@ import javax.persistence.*;
 @Getter
 @Setter
 @ToString(callSuper = true)
-@Entity(name ="\"User\"")
-public class User extends AuditingFields {
+@Entity
+public class Store extends AuditingFields {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
-    private Integer userId;
-
-    @Column(length = 24, nullable = false)
-    private String userName;
+    private Integer storeId;
+    private @Column(length = 24, nullable = false) String storeName;
+    private @Column(length = 1) String workTypeCd;
 }

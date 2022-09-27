@@ -1,6 +1,6 @@
 package com.kakaopay.membership.user.repository;
 
-import com.kakaopay.membership.user.repository.entity.User;
+import com.kakaopay.membership.user.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

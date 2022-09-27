@@ -1,16 +1,17 @@
-package com.kakaopay.membership.point.controller.dto;
+package com.kakaopay.membership.point.service.dto;
 
-import com.kakaopay.membership.point.service.dto.EarnPointOutDto;
+import com.kakaopay.membership.history.entity.History;
 import lombok.*;
 
 import java.sql.Timestamp;
 
 @Getter
 @Setter
+@ToString
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
 @Builder
-public class EarnPointResDto {
+public class ValidatedTranInfoDto {
     private Integer storeId;
     private String storeName;
     private String barcode;
@@ -22,8 +23,8 @@ public class EarnPointResDto {
     private Integer tranPoint;
     private Integer totalPoint;
 
-    public static EarnPointResDto fromOutDto(EarnPointOutDto inDto) {
-        return new EarnPointResDto().builder()
+    public static History toHistory(ValidatedTranInfoDto inDto) {
+        return new History().builder()
                 .storeId(inDto.getStoreId())
                 .storeName(inDto.getStoreName())
                 .barcode(inDto.getBarcode())
