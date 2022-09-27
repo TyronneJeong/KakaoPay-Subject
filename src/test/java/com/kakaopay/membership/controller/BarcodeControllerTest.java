@@ -17,14 +17,12 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 public class BarcodeControllerTest {
-
     @Autowired
     private MockMvc mockMvc;
-
     @Autowired
     private ObjectMapper objectMapper;
 
-    @DisplayName("바코드 발급 테스트")
+    @DisplayName("바코드 신규 발급 테스트")
     @Test
     void issueTest() throws Exception {
         Integer userId = 1;
@@ -34,5 +32,9 @@ public class BarcodeControllerTest {
                 ).andDo(print())
                 .andExpect(status().isOk());
     }
+
+    // 바코드 기존 발급 데이터 재발급
+
+    //
 
 }

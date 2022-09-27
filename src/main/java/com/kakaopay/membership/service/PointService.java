@@ -6,7 +6,7 @@ import com.kakaopay.membership.service.dto.UsePointInDto;
 import com.kakaopay.membership.service.dto.UsePointOutDto;
 
 public interface PointService {
-    public UsePointOutDto usePoint(UsePointInDto inDto);
+    UsePointOutDto usePoint(UsePointInDto inDto);
 
-    public EarnPointOutDto earnPoint(EarnPointInDto inDto);
+    EarnPointOutDto earnPoint(EarnPointInDto inDto);
 }

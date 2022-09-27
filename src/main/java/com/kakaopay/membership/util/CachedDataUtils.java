@@ -47,29 +47,7 @@ public class CachedDataUtils {
                 cacheRepository.setData(Constants.CACHE_PREFIX.BARCODE, barcode, optionalBarcode.get());
                 cacheRepository.setData(Constants.CACHE_PREFIX.OWNER, String.valueOf(userId), optionalBarcode.get());
             } else {
-                Optional<Set> optionalSet = cacheRepository.getData(Constants.CACHE_PREFIX.RELATION,
-                        String.valueOf(optionalBarcode.get().getOwnerId()), Set.class);
-                if(optionalSet.isPresent()){
-                    if(!optionalSet.get().contains(userId)){
-                        throw new ApplicationException(ErrorCode.NOT_ALLOWED_USER_ID, "사용이 허락되지 않은 사용자입니다.");
-                    }
-                }
-                Optional<Relation> optionalRelation = relationRepository.findById(new RelationPK(
-                        optionalBarcode.get().getOwnerId(), userId));
-                if (optionalRelation.isEmpty()) {
-                    throw new ApplicationException(ErrorCode.NOT_ALLOWED_USER_ID, "사용이 허락되지 않은 사용자입니다.");
-                }
-
-                Set<String> relationSet;
-                if(optionalSet.isPresent()){
-                    relationSet = optionalSet.get();
-                    relationSet.add(String.valueOf(userId));
-                } else {
-                    relationSet = new HashSet<>();
-                    relationSet.add(String.valueOf(userId));
-                }
-                cacheRepository.setData(Constants.CACHE_PREFIX.RELATION,
-                        String.valueOf(optionalBarcode.get().getOwnerId()), relationSet);
+                if (getRelation(userId, optionalBarcode)) return optionalBarcode;
             }
             return optionalBarcode;
         }
@@ -80,18 +58,39 @@ public class CachedDataUtils {
                 cacheRepository.setData(Constants.CACHE_PREFIX.BARCODE, optionalBarcode.get().getBarcode(), optionalBarcode.get());
                 cacheRepository.setData(Constants.CACHE_PREFIX.OWNER, String.valueOf(userId), optionalBarcode.get());
             } else {
-                Optional<Relation> optionalRelation = relationRepository.findById(
-                        new RelationPK(optionalBarcode.get().getOwnerId(), userId));
-                if (optionalRelation.isEmpty()) {
-                    throw new ApplicationException(ErrorCode.NOT_ALLOWED_USER_ID, "사용이 허락되지 않은 사용자입니다.");
-                }
-                cacheRepository.setData(Constants.CACHE_PREFIX.RELATION
-                        , String.valueOf(userId), optionalBarcode.get());
+                if (getRelation(userId, optionalBarcode)) return optionalBarcode;
             }
         } else {
             throw new ApplicationException(ErrorCode.NOT_REGISTERED_BARCODE_NUMBER, "존재하지 않는 바코드 번호 입니다.");
         }
         return optionalBarcode;
+    }
+
+    private boolean getRelation(Integer userId, Optional<Barcode> optionalBarcode) {
+        Optional<Set> optionalSet = cacheRepository.getData(Constants.CACHE_PREFIX.RELATION,
+                String.valueOf(optionalBarcode.get().getOwnerId()), Set.class);
+        if(optionalSet.isPresent()){
+            if(optionalSet.get().contains(userId)){
+                return true;
+            }
+        }
+        Optional<Relation> optionalRelation = relationRepository.findById(
+                new RelationPK(optionalBarcode.get().getOwnerId(), userId));
+        if (optionalRelation.isEmpty()) {
+            throw new ApplicationException(ErrorCode.NOT_ALLOWED_USER_ID, "사용이 허락되지 않은 사용자입니다.");
+        }
+
+        Set<String> relationSet;
+        if(optionalSet.isPresent()){
+            relationSet = optionalSet.get();
+            relationSet.add(String.valueOf(userId));
+        } else {
+            relationSet = new HashSet<>();
+            relationSet.add(String.valueOf(userId));
+        }
+        cacheRepository.setData(Constants.CACHE_PREFIX.RELATION,
+                String.valueOf(optionalBarcode.get().getOwnerId()), relationSet);
+        return false;
     }
 
     public Optional<User> getUser(Integer userId) {
