@@ -24,13 +24,8 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @Service
 public class BarcodeServiceImpl implements BarcodeService {
-
     private final BarcodeRepository barcodeRepository;
-
-    private final RelationRepository relationRepository;
     private final UserRepository userRepository;
-    @PersistenceContext
-    EntityManager entityManager;
 
     @Transactional
     @Override

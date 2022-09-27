@@ -6,17 +6,19 @@ import com.kakaopay.membership.point.service.dto.UsePointOutDto;
 import lombok.*;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@NoArgsConstructor(access = AccessLevel.PUBLIC)
+@AllArgsConstructor(access = AccessLevel.PUBLIC)
 @Builder
 public class HistoryResDto {
     private Integer storeId;
     private String storeName;
     private String barcode;
     private String workTypeCd;
-    private Timestamp tranDate;
+    private LocalDateTime tranDate;
     private Integer tranUserId;
     private String tranUserName;
     private String inOutDvCd;

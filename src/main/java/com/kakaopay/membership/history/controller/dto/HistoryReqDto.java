@@ -2,7 +2,8 @@ package com.kakaopay.membership.history.controller.dto;
 
 import lombok.*;
 
-import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -10,6 +11,6 @@ import java.sql.Timestamp;
 @Builder
 public class HistoryReqDto {
     private String barcode;
-    private Timestamp fromDate;
-    private Timestamp toDate;
+    private LocalDate fromDate;
+    private LocalDate toDate;
 }

@@ -24,6 +24,7 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.sql.Timestamp;
 import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 
@@ -95,7 +96,7 @@ public class PointServiceImpl implements PointService {
                 .storeId(optionalStore.get().getStoreId())
                 .storeName(optionalStore.get().getStoreName())
                 .workTypeCd(optionalStore.get().getWorkTypeCd())
-                .tranDate(Timestamp.from(Instant.now()))
+                .tranDate(LocalDateTime.now())
                 .tranUserId(optionalUser.get().getUserId())
                 .tranUserName(optionalUser.get().getUserName())
                 .build();

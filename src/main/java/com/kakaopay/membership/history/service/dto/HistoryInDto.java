@@ -3,17 +3,20 @@ package com.kakaopay.membership.history.service.dto;
 import com.kakaopay.membership.history.controller.dto.HistoryReqDto;
 import lombok.*;
 
-import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
 
 @Getter
 @Setter
+@ToString
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
 @Builder
 public class HistoryInDto {
     private String barcode;
-    private Timestamp fromDate;
-    private Timestamp toDate;
+    private LocalDate fromDate;
+    private LocalDate toDate;
 
     public static HistoryInDto fromReqDto(HistoryReqDto inDto){
         return HistoryInDto.builder()

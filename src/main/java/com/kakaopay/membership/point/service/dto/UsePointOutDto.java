@@ -3,6 +3,7 @@ package com.kakaopay.membership.point.service.dto;
 import lombok.*;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -15,7 +16,7 @@ public class UsePointOutDto {
     private String storeName;
     private String barcode;
     private String workTypeCd;
-    private Timestamp tranDate;
+    private LocalDateTime tranDate;
     private Integer tranUserId;
     private String tranUserName;
     private String inOutDvCd;

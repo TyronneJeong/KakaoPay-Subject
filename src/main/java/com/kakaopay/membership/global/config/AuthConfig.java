@@ -20,19 +20,10 @@ public class AuthConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable()
-                .authorizeRequests()
-                .antMatchers("/api/*/membership/**").permitAll()
+        http.csrf().disable().authorizeRequests().antMatchers("/api/*/membership/**").permitAll()
                 .antMatchers("/api/**").authenticated()
-                .anyRequest().permitAll()
-                .and()
-                .sessionManagement()
+                .anyRequest().permitAll().and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                .and()
-                .exceptionHandling()
-                // .authenticationEntryPoint(new CustomAuthenticationEntryPoint())
-                .and();
-//                .addFilterBefore(new JwtTokenFilter(userService, secretKey), UsernamePasswordAuthenticationFilter.class);
+                .and().exceptionHandling();
     }
-
 }

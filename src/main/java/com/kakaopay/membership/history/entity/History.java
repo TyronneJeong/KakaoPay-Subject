@@ -8,8 +8,10 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.time.Instant;
+import java.time.LocalDateTime;
 
 @Getter
+@Setter
 @ToString(callSuper = true)
 @Entity
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
@@ -17,39 +19,17 @@ import java.time.Instant;
 @Builder
 public class History extends AuditingFields {
     @Id
-    @GeneratedValue
-    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer tranHistId;
-
-    @Setter @Column
     private Integer storeId;
-
-    @Setter @Column(nullable = false, updatable = false,  length = 24)
-    private String storeName;
-
-    @Setter @Column(nullable = false, updatable = false, length = 10)
-    private String barcode;
-
-    @Setter @Column(nullable = false, updatable = false, length = 1)
-    private String workTypeCd;
-
-    @Setter @Column(nullable = false, updatable = false, length = 4)
-    private String inOutDvCd;
-
-    @Setter @Column(nullable = false, updatable = false)
+    private @Column(length = 24)String storeName;
+    private @Column(length = 10) String barcode;
+    private @Column(length = 1) String workTypeCd;
+    private @Column(length = 4) String inOutDvCd;
     private Integer tranPoint;
-
-    @Setter @Column(nullable = false, updatable = false)
     private Integer totalPoint;
-
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
-    @Setter @Column(nullable = false, updatable = false)
-    private Timestamp tranDate;
-
-    @Setter @Column(nullable = false, updatable = false,  length = 16)
+    private LocalDateTime tranDate;
     private Integer tranUserId;
-
-    @Setter @Column(nullable = false, updatable = false,  length = 24)
-    private String tranUserName;
-
+    private @Column(length = 24) String tranUserName;
 }

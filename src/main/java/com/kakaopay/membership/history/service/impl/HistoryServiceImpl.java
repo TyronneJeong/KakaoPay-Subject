@@ -7,8 +7,12 @@ import com.kakaopay.membership.history.service.dto.HistoryInDto;
 import com.kakaopay.membership.history.service.dto.HistoryOutDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,11 +26,12 @@ public class HistoryServiceImpl implements HistoryService {
     @Override
     public List<HistoryOutDto> getHistory(HistoryInDto inDto) {
         log.debug("▶▶ retriveHistory start >> : " + inDto.toString());
-        List<History> historyList = historyRepository.findAllByBarcodeCreatedAtBetween(inDto.getBarcode(), inDto.getToDate(), inDto.getToDate());
+        List<History> histories = historyRepository.findAllByBarcodeAndCreatedAtBetween(
+                inDto.getBarcode(),
+                LocalDateTime.of(inDto.getFromDate(), LocalTime.of(0, 0, 1)),
+                LocalDateTime.of(inDto.getToDate(), LocalTime.of(23, 59, 59)));
         List<HistoryOutDto> historyOutDtos = new ArrayList<>();
-        for(History vo : historyList){
-            historyOutDtos.add(HistoryOutDto.fromEntity(vo));
-        }
+        histories.forEach(e-> historyOutDtos.add(HistoryOutDto.fromEntity(e)));
         return historyOutDtos;
     }
 }
