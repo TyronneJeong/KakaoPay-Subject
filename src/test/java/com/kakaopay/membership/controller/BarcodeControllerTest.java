@@ -1,7 +1,7 @@
 package com.kakaopay.membership.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.kakaopay.membership.barcode.controller.dto.BarcodeIssueReqDto;
+import com.kakaopay.membership.controller.dto.BarcodeIssueReqDto;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
