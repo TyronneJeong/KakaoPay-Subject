@@ -96,7 +96,7 @@ public class PointServiceImpl implements PointService {
                 .storeId(optionalStore.get().getStoreId())
                 .storeName(optionalStore.get().getStoreName())
                 .workTypeCd(optionalStore.get().getWorkTypeCd())
-                .tranDate(LocalDateTime.now())
+                .approvedAt(LocalDateTime.now())
                 .tranUserId(optionalUser.get().getUserId())
                 .tranUserName(optionalUser.get().getUserName())
                 .build();

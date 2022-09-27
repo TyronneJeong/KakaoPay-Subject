@@ -29,7 +29,7 @@ public class History extends AuditingFields {
     private Integer tranPoint;
     private Integer totalPoint;
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
-    private LocalDateTime tranDate;
+    private LocalDateTime approvedAt;
     private Integer tranUserId;
     private @Column(length = 24) String tranUserName;
 }

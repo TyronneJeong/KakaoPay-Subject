@@ -16,7 +16,7 @@ public class UsePointResDto {
     private String storeName;
     private String barcode;
     private String workTypeCd;
-    private LocalDateTime tranDate;
+    private LocalDateTime approvedAt;
     private Integer tranUserId;
     private String tranUserName;
     private String inOutDvCd;
@@ -29,7 +29,7 @@ public class UsePointResDto {
                 .storeName(inDto.getStoreName())
                 .barcode(inDto.getBarcode())
                 .workTypeCd(inDto.getWorkTypeCd())
-                .tranDate(inDto.getTranDate())
+                .approvedAt(inDto.getApprovedAt())
                 .tranUserId(inDto.getTranUserId())
                 .tranUserName(inDto.getTranUserName())
                 .inOutDvCd(inDto.getInOutDvCd())

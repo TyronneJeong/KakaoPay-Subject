@@ -9,5 +9,5 @@ import java.util.List;
 
 @Repository
 public interface HistoryRepository extends JpaRepository<History, String> {
-    List<History> findAllByBarcodeAndCreatedAtBetween(String barcode, LocalDateTime fromDate, LocalDateTime toDate);
+    List<History> findAllByBarcodeAndApprovedAtBetweenOrderByApprovedAtDesc(String barcode, LocalDateTime fromDate, LocalDateTime toDate);
 }

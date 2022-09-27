@@ -30,7 +30,6 @@ public class HistoryController {
 
     @GetMapping("/{barcode}/history")
     public Response<List<HistoryResDto>> history(
-            @PageableDefault(sort = {"barcode"}, value = 20) Pageable pageable,
             @RequestParam("barcode") String barcode,
             @RequestParam("fromDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate fromDate,
             @RequestParam("toDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate toDate

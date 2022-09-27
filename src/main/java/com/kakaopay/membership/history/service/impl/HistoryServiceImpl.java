@@ -26,7 +26,7 @@ public class HistoryServiceImpl implements HistoryService {
     @Override
     public List<HistoryOutDto> getHistory(HistoryInDto inDto) {
         log.debug("▶▶ retriveHistory start >> : " + inDto.toString());
-        List<History> histories = historyRepository.findAllByBarcodeAndCreatedAtBetween(
+        List<History> histories = historyRepository.findAllByBarcodeAndApprovedAtBetweenOrderByApprovedAtDesc(
                 inDto.getBarcode(),
                 LocalDateTime.of(inDto.getFromDate(), LocalTime.of(0, 0, 1)),
                 LocalDateTime.of(inDto.getToDate(), LocalTime.of(23, 59, 59)));
