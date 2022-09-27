@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/v1/membership")
 @RestController
 public class BarcodeController {
-
     private final BarcodeService barcodeService;
 
     @PostMapping("/barcode")

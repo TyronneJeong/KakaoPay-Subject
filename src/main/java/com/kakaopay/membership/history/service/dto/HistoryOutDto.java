@@ -3,7 +3,6 @@ package com.kakaopay.membership.history.service.dto;
 import com.kakaopay.membership.history.entity.History;
 import lombok.*;
 
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 @Getter

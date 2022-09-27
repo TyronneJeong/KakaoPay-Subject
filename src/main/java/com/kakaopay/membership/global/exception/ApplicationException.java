@@ -12,7 +12,7 @@ public class ApplicationException extends RuntimeException {
 
     @Override
     public String getMessage() {
-        if(message == null) {
+        if (message == null) {
             return errorCode.getMessage();
         }
         return String.format("%s. %s", errorCode.getMessage(), message);

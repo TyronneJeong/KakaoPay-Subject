@@ -26,8 +26,12 @@ public abstract class AuditingFields {
     private LocalDateTime modifiedAt; // 수정일시
 
     @PrePersist
-    void registeredAt() { this.createdAt = LocalDateTime.now(); }
+    void registeredAt() {
+        this.createdAt = LocalDateTime.now();
+    }
 
     @PreUpdate
-    void modifiedAt() { this.modifiedAt = LocalDateTime.now(); }
+    void modifiedAt() {
+        this.modifiedAt = LocalDateTime.now();
+    }
 }

@@ -11,6 +11,7 @@ import lombok.*;
 @Builder
 public class BarcodeIssueInDto {
     private Integer userId;
+
     public static BarcodeIssueInDto fromReqDto(BarcodeIssueReqDto reqDto) {
         return new BarcodeIssueInDto(reqDto.getUserId());
     }

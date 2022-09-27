@@ -37,7 +37,7 @@ public class HistoryController {
         List<HistoryOutDto> historyResDtoList = historyService.getHistory(
                 HistoryInDto.fromReqDto(HistoryReqDto.builder().barcode(barcode).fromDate(fromDate).toDate(toDate).build()));
         List<HistoryResDto> historyResDtos = new ArrayList<>();
-        historyResDtoList.forEach(e->historyResDtos.add(HistoryResDto.fromOutDto(e)));
+        historyResDtoList.forEach(e -> historyResDtos.add(HistoryResDto.fromOutDto(e)));
         return Response.success(historyResDtos);
     }
 }

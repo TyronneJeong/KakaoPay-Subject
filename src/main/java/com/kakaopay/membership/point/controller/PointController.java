@@ -6,7 +6,6 @@ import com.kakaopay.membership.point.controller.dto.EarnPointResDto;
 import com.kakaopay.membership.point.controller.dto.UsePointReqDto;
 import com.kakaopay.membership.point.controller.dto.UsePointResDto;
 import com.kakaopay.membership.point.service.PointService;
-import com.kakaopay.membership.point.service.impl.PointServiceImpl;
 import com.kakaopay.membership.point.service.dto.EarnPointInDto;
 import com.kakaopay.membership.point.service.dto.UsePointInDto;
 import lombok.RequiredArgsConstructor;
@@ -15,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 @Slf4j
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/membership/point")

@@ -1,22 +1,19 @@
 package com.kakaopay.membership.barcode.service.impl;
 
-import com.kakaopay.membership.barcode.repository.BarcodeRepository;
 import com.kakaopay.membership.barcode.entity.Barcode;
-import com.kakaopay.membership.relation.repository.RelationRepository;
+import com.kakaopay.membership.barcode.repository.BarcodeRepository;
 import com.kakaopay.membership.barcode.service.BarcodeService;
 import com.kakaopay.membership.barcode.service.dto.BarcodeIssueInDto;
 import com.kakaopay.membership.barcode.service.dto.BarcodeIssueOutDto;
 import com.kakaopay.membership.global.constants.MsgConst;
 import com.kakaopay.membership.global.exception.ApplicationException;
 import com.kakaopay.membership.global.exception.ErrorCode;
-import com.kakaopay.membership.user.repository.UserRepository;
 import com.kakaopay.membership.user.entity.User;
+import com.kakaopay.membership.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 import java.util.Optional;
 

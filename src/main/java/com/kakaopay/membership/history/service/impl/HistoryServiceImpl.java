@@ -7,8 +7,6 @@ import com.kakaopay.membership.history.service.dto.HistoryInDto;
 import com.kakaopay.membership.history.service.dto.HistoryOutDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -31,7 +29,7 @@ public class HistoryServiceImpl implements HistoryService {
                 LocalDateTime.of(inDto.getFromDate(), LocalTime.of(0, 0, 1)),
                 LocalDateTime.of(inDto.getToDate(), LocalTime.of(23, 59, 59)));
         List<HistoryOutDto> historyOutDtos = new ArrayList<>();
-        histories.forEach(e-> historyOutDtos.add(HistoryOutDto.fromEntity(e)));
+        histories.forEach(e -> historyOutDtos.add(HistoryOutDto.fromEntity(e)));
         return historyOutDtos;
     }
 }

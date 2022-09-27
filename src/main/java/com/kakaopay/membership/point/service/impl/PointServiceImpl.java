@@ -13,17 +13,15 @@ import com.kakaopay.membership.point.service.PointService;
 import com.kakaopay.membership.point.service.dto.*;
 import com.kakaopay.membership.relation.entity.RelationPK;
 import com.kakaopay.membership.relation.repository.RelationRepository;
-import com.kakaopay.membership.store.repository.StoreRepository;
 import com.kakaopay.membership.store.entity.Store;
-import com.kakaopay.membership.user.repository.UserRepository;
+import com.kakaopay.membership.store.repository.StoreRepository;
 import com.kakaopay.membership.user.entity.User;
+import com.kakaopay.membership.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.sql.Timestamp;
-import java.time.Instant;
 import java.time.LocalDateTime;
 import java.util.Optional;
 

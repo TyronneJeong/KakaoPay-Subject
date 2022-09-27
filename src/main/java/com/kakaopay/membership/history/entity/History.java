@@ -22,7 +22,7 @@ public class History extends AuditingFields {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer tranHistId;
     private Integer storeId;
-    private @Column(length = 24)String storeName;
+    private @Column(length = 24) String storeName;
     private @Column(length = 10) String barcode;
     private @Column(length = 1) String workTypeCd;
     private @Column(length = 4) String inOutDvCd;

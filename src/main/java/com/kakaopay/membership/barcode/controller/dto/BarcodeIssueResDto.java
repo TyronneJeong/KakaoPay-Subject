@@ -3,8 +3,6 @@ package com.kakaopay.membership.barcode.controller.dto;
 import com.kakaopay.membership.barcode.service.dto.BarcodeIssueOutDto;
 import lombok.*;
 
-import java.math.BigInteger;
-
 @Getter
 @Setter
 @NoArgsConstructor(access = AccessLevel.PUBLIC)

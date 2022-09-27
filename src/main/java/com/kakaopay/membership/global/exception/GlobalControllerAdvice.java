@@ -9,9 +9,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @Slf4j
 @RestControllerAdvice
 public class GlobalControllerAdvice {
-
     @ExceptionHandler(ApplicationException.class)
-    public ResponseEntity<?> applicationHandler(ApplicationException e){
+    public ResponseEntity<?> applicationHandler(ApplicationException e) {
         log.error("Error occurs {}", e.toString());
         return ResponseEntity.status(e.getErrorCode().getStatus())
                 .body(Response.error(e.getErrorCode().name()));

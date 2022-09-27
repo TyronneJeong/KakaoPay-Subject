@@ -4,8 +4,6 @@ import com.kakaopay.membership.history.controller.dto.HistoryReqDto;
 import lombok.*;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.Date;
 
 @Getter
 @Setter
@@ -18,7 +16,7 @@ public class HistoryInDto {
     private LocalDate fromDate;
     private LocalDate toDate;
 
-    public static HistoryInDto fromReqDto(HistoryReqDto inDto){
+    public static HistoryInDto fromReqDto(HistoryReqDto inDto) {
         return HistoryInDto.builder()
                 .barcode(inDto.getBarcode())
                 .fromDate(inDto.getFromDate())

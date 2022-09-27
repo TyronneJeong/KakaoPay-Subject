@@ -2,7 +2,6 @@ package com.kakaopay.membership.point.entity;
 
 import com.kakaopay.membership.global.model.AuditingFields;
 import lombok.*;
-import lombok.experimental.SuperBuilder;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
