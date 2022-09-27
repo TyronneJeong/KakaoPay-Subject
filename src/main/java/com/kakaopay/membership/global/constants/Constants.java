@@ -18,4 +18,11 @@ public final class Constants {
         public static final String IN = "EARN";
         public static final String OUT = "USE";
     }
+
+    public final class CACHED_PREFIX {
+        public static final String BARCODE = "BARCODE:";
+        public static final String OWNER = "OWNER:";
+        public static final String USER = "USER:";
+        public static final String STORE = "STORE:";
+    }
 }

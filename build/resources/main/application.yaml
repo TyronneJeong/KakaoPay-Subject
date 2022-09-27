@@ -10,6 +10,12 @@ logging:
     # console: '%d{yyyy-MM-dd HH:mm:ss} - %msg%n'
     file: '%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%'
 
+spring.redis:
+  host: localhost
+  port: 6379
+  timeout: 6
+  #url: redis://:p8e682aad12b7caf6e8a4d75769964a337be7324cd4634764d238a7c4f53b357e@ec2-44-208-247-66.compute-1.amazonaws.com:22049
+
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/kakaopay
