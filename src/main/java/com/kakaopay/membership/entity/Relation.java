@@ -16,6 +16,6 @@ import java.io.Serializable;
 public class Relation extends AuditingFields implements Serializable {
     private @Id Integer userId;
     private @Id Integer friendId;
-    private @Column String relationTypeCd;
+    private @Column(length = 1) String relationTypeCd;
     private @Transient @ManyToOne User user;
 }

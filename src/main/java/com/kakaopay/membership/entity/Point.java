@@ -18,7 +18,7 @@ import java.io.Serializable;
 @Entity
 @IdClass(PointPK.class)
 public class Point extends AuditingFields implements Serializable {
-    private @Id String barcode;
-    private @Id String workTypeCd;
+    private @Id @Column(length = 10) String barcode;
+    private @Id @Column(length = 1) String workTypeCd;
     private @Column Integer point;
 }
