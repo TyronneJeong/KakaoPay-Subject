@@ -3,6 +3,7 @@ package com.kakaopay.membership.service.impl;
 import com.kakaopay.membership.constants.Constants;
 import com.kakaopay.membership.entity.Barcode;
 import com.kakaopay.membership.entity.User;
+import com.kakaopay.membership.entity.generator.BarcodeGenerator;
 import com.kakaopay.membership.repository.BarcodeRepository;
 import com.kakaopay.membership.repository.CacheRepository;
 import com.kakaopay.membership.repository.UserRepository;
@@ -23,9 +24,8 @@ import java.util.Optional;
 public class BarcodeServiceImpl implements BarcodeService {
     private final CacheRepository cacheRepository;
     private final BarcodeRepository barcodeRepository;
-    private final UserRepository userRepository;
-
     private final CachedDataUtils cachedDataUtils;
+    private final BarcodeGenerator barcodeGenerator;
 
     @Transactional
     @Override
@@ -41,7 +41,8 @@ public class BarcodeServiceImpl implements BarcodeService {
         // Search from Database
         optionalBarcode = barcodeRepository.findByOwnerId(user.getUserId());
         if (optionalBarcode.isEmpty()) {
-            Barcode barcode = barcodeRepository.save(Barcode.builder().ownerId(user.getUserId()).build());
+            Barcode barcode = barcodeRepository.save(Barcode.builder().barcode(barcodeGenerator.generate())
+                    .ownerId(user.getUserId()).build());
             cacheRepository.setData(Constants.CACHE_PREFIX.BARCODE, barcode.getBarcode(), barcode);
             cacheRepository.setData(Constants.CACHE_PREFIX.OWNER, String.valueOf(barcode.getOwnerId()), barcode);
             return BarcodeIssueOutDto.fromEntity(barcode);

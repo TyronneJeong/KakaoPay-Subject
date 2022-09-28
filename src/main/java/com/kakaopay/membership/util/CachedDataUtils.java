@@ -28,6 +28,7 @@ public class CachedDataUtils {
         // Search from Cache Block
         Optional<Store> optionalStore = cacheRepository.getData(Constants.CACHE_PREFIX.STORE, String.valueOf(storeId), Store.class);
         if (optionalStore.isPresent()) {
+            log.debug("★☆ getStore - Cache Hit!! : " + storeId);
             return optionalStore;
         }
         // Search from Database
@@ -39,10 +40,29 @@ public class CachedDataUtils {
         return optionalStore;
     }
 
+    public Optional<Barcode> getBarcode(String barcode) {
+        // Search from Cache Block
+        Optional<Barcode> optionalBarcode = cacheRepository.getData(Constants.CACHE_PREFIX.BARCODE, barcode, Barcode.class);
+        if (optionalBarcode.isPresent()) {
+            log.debug("★☆ getBarcode - Cache Hit!! : " + barcode);
+            cacheRepository.setData(Constants.CACHE_PREFIX.BARCODE, barcode, optionalBarcode.get());
+            return optionalBarcode;
+        }
+        // Search from Database
+        optionalBarcode = barcodeRepository.findById(barcode);
+        if (optionalBarcode.isPresent()) {
+            cacheRepository.setData(Constants.CACHE_PREFIX.BARCODE, optionalBarcode.get().getBarcode(), optionalBarcode.get());
+        } else {
+            throw new ApplicationException(ErrorCode.NOT_REGISTERED_BARCODE_NUMBER, "존재하지 않는 바코드 번호 입니다.");
+        }
+        return optionalBarcode;
+    }
+
     public Optional<Barcode> getBarcode(String barcode, Integer userId) {
         // Search from Cache Block
         Optional<Barcode> optionalBarcode = cacheRepository.getData(Constants.CACHE_PREFIX.BARCODE, barcode, Barcode.class);
         if (optionalBarcode.isPresent()) {
+            log.debug("★☆ getBarcode - Cache Hit!! : " + barcode);
             if (optionalBarcode.get().getOwnerId().equals(userId)) {
                 cacheRepository.setData(Constants.CACHE_PREFIX.BARCODE, barcode, optionalBarcode.get());
                 cacheRepository.setData(Constants.CACHE_PREFIX.OWNER, String.valueOf(userId), optionalBarcode.get());
@@ -69,8 +89,9 @@ public class CachedDataUtils {
     private boolean getRelation(Integer userId, Optional<Barcode> optionalBarcode) {
         Optional<Set> optionalSet = cacheRepository.getData(Constants.CACHE_PREFIX.RELATION,
                 String.valueOf(optionalBarcode.get().getOwnerId()), Set.class);
-        if(optionalSet.isPresent()){
-            if(optionalSet.get().contains(userId)){
+        if (optionalSet.isPresent()) {
+            log.debug("★☆ getRelation - Cache Hit!! : " + userId);
+            if (optionalSet.get().contains(userId)) {
                 return true;
             }
         }
@@ -81,7 +102,7 @@ public class CachedDataUtils {
         }
 
         Set<String> relationSet;
-        if(optionalSet.isPresent()){
+        if (optionalSet.isPresent()) {
             relationSet = optionalSet.get();
             relationSet.add(String.valueOf(userId));
         } else {
@@ -98,6 +119,7 @@ public class CachedDataUtils {
         Optional<User> optionalUser = cacheRepository.getData(Constants.CACHE_PREFIX.USER
                 , String.valueOf(userId), User.class);
         if (optionalUser.isPresent()) {
+            log.debug("★☆ getUser - Cache Hit!! : " + userId);
             return optionalUser;
         }
         // Search from Database

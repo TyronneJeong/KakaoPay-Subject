@@ -6,7 +6,6 @@ import com.kakaopay.membership.exception.ApplicationException;
 import com.kakaopay.membership.exception.ErrorCode;
 import com.kakaopay.membership.repository.HistoryRepository;
 import com.kakaopay.membership.repository.PointRepository;
-import com.kakaopay.membership.repository.StoreRepository;
 import com.kakaopay.membership.service.PointService;
 import com.kakaopay.membership.service.dto.*;
 import com.kakaopay.membership.util.CachedDataUtils;
@@ -24,7 +23,6 @@ import java.util.Optional;
 @Transactional
 @Service
 public class PointServiceImpl implements PointService {
-
     private final PointRepository pointRepository;
     private final HistoryRepository historyRepository;
     private final CachedDataUtils cachedDataUtils;
@@ -38,11 +36,9 @@ public class PointServiceImpl implements PointService {
         if (!point.isPresent() || point.get().getPoint() < inDto.getUsePoint()) {
             throw new ApplicationException(ErrorCode.NO_REMAINED_POINT, "지불 가능한 포인트가 없거나 모자랍니다.");
         }
-
         Integer totalAmount = 0;
         point.get().setPoint(totalAmount = point.get().getPoint() - inDto.getUsePoint());
         pointRepository.save(point.get());
-
         tranInfo.setTranPoint(inDto.getUsePoint());
         tranInfo.setTotalPoint(totalAmount);
         tranInfo.setInOutDvCd(Constants.IN_OUT_DVCD.OUT);
@@ -54,7 +50,6 @@ public class PointServiceImpl implements PointService {
     public EarnPointOutDto earnPoint(EarnPointInDto inDto) {
         log.debug("▶▶ earnPoint start >> : " + inDto.toString());
         ValidatedTranInfoDto tranInfo = this.validateTranInfo(inDto.getBarcode(), inDto.getStoreId(), inDto.getUserId());
-
         Integer totalAmount = 0;
         Optional<Point> point = pointRepository.findById(new PointPK(inDto.getBarcode(), tranInfo.getWorkTypeCd()));
         if (point.isPresent()) {
@@ -62,13 +57,11 @@ public class PointServiceImpl implements PointService {
         } else {
             totalAmount = inDto.getEarnPoint();
         }
-
         pointRepository.save(Point.builder()
                 .barcode(inDto.getBarcode())
                 .workTypeCd(tranInfo.getWorkTypeCd())
                 .point(totalAmount)
                 .build());
-
         tranInfo.setTranPoint(inDto.getEarnPoint());
         tranInfo.setTotalPoint(totalAmount);
         tranInfo.setInOutDvCd(Constants.IN_OUT_DVCD.IN);
@@ -77,12 +70,9 @@ public class PointServiceImpl implements PointService {
     }
 
     private ValidatedTranInfoDto validateTranInfo(String barcode, Integer storeId, Integer userId) {
-        // cacheUtils
         Optional<User> optionalUser = cachedDataUtils.getUser(userId);
         Optional<Barcode> optionalBarcode = cachedDataUtils.getBarcode(barcode, userId);
         Optional<Store> optionalStore = cachedDataUtils.getStore(storeId);
-
-        // relation 관계 조사가 없음
         return ValidatedTranInfoDto.builder()
                 .barcode(optionalBarcode.get().getBarcode())
                 .storeId(optionalStore.get().getStoreId())

@@ -17,8 +17,8 @@ import java.io.Serializable;
 @Table(name = "Barcode")
 public class Barcode extends AuditingFields implements Serializable {
     @Id
-    @GeneratedValue(generator = "barcode")
-    @GenericGenerator(name = "barcode", strategy = "com.kakaopay.membership.entity.generator.BarcodeGenerator")
+//    @GeneratedValue(generator = "barcode")
+//    @GenericGenerator(name = "barcode", strategy = "com.kakaopay.membership.entity.generator.BarcodeGenerator")
     private @Column(length = 10) String barcode;
     private @Column Integer ownerId;
 }
